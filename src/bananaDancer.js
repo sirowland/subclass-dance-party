@@ -1,4 +1,4 @@
-var GifyDancer = function(top, left, timeBetweenSteps) {
+var BananaDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node = $('<span class="gify"><img src="banana.gif"></span>');
   this.count = 0;
@@ -6,16 +6,13 @@ var GifyDancer = function(top, left, timeBetweenSteps) {
   this.setPosition();
 };
 
-GifyDancer.prototype = Object.create(Dancer.prototype);
-GifyDancer.prototype.constructor = GifyDancer;
+BananaDancer.prototype = Object.create(Dancer.prototype);
+BananaDancer.prototype.constructor = BananaDancer;
 
-GifyDancer.prototype.step = function() {
+BananaDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
   this.$node.toggleClass('stretchy',1000);
   this.count++;
 
-  if (this.count % 5 === 0) {
-    this.$node.toggleClass('gify1', 100);
-  }
 };
 

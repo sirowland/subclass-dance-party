@@ -23,11 +23,12 @@ $(document).ready(function() {
 
     // make a dancer with a random position
     var height = $('body').height();
+    var width = $('body').width();
 
 
     var dancer = new dancerMakerFunction(
       Math.random() * ( 0.75 * height - (height / 2) ) + ( height / 2 ),
-      $("body").width() * Math.random(),
+      Math.random() * ( 0.85 * width ),
       100
     );
 
@@ -72,11 +73,17 @@ $(document).ready(function() {
     });   
   });
 
-  // $('body').on('mouseover', 'span', function(event) {
+  $('body').on('mouseenter', 'span', function(event) {
     
-  //   $(event.target).toggleClass('hovered');
+    $(event.target).addClass('hovered');
     
-  // });
+  });
+
+  $('body').on('mouseleave', 'span', function(event) {
+    
+    $(event.target).removeClass('hovered');
+    
+  });
 
 
 });

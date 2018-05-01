@@ -28,6 +28,12 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
+
+img {
+  height: 150px;
+  width: auto;
+}
+
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
@@ -41,8 +47,23 @@ body, a:link, a:visited, a:active{
 }
 
 .gify{
-  background: url('banana.gif');
   position: fixed;
+  transition: 1s;
+}
+
+.bouncy{
+  position: fixed;
+  transition: 1s;
+}
+
+.rolly{
+  position: fixed;
+  transition: 1s;
+  transform: rotate(0deg);
+}
+
+.roll{
+  transform: rotate(360deg);
 }
 
 .dancer{
@@ -70,5 +91,5 @@ body, a:link, a:visited, a:active{
 }
 
 .hovered{
-  border: 10px solid red;
+  border: 2px solid black;
 }
