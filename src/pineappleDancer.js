@@ -2,7 +2,6 @@ var PineappleDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node = $('<span class="bouncy"><img src="pineapple.png"></span>');
   this.count = 0;
-  this.step();
   this.setPosition();
 };
 
