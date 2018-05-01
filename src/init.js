@@ -34,10 +34,47 @@ $(document).ready(function() {
   });
 
   $('.lineUpButton').on('click', function(event) {
+    
     window.dancers.forEach(function (dancer){
       dancer.lineUp();
     });
   });
+
+  $('body').on('click', 'span', function(event) {
+    
+    var element = $(event.target);
+
+    var clickedLeft = element.context.x || element.context.offsetLeft;
+    var clickedTop = element.context.y || element.context.offsetTop;
+
+    console.log(element)
+    
+    var dancerGroup = [];
+
+    window.dancers.forEach(function (dancer){
+      var top = dancer.top;
+      var left = dancer.left;
+
+      var distanceFromTarget = Math.floor(Math.sqrt((top - clickedTop) ** 2 + (left - clickedLeft) ** 2));
+      console.log('distance:', distanceFromTarget);
+      
+      if (distanceFromTarget < 500) {
+        dancerGroup.push(dancer);
+      }
+    });
+
+    dancerGroup.push(element);
+
+    dancerGroup.forEach(function (dancer){
+      dancer.lineUp();
+    });   
+  });
+
+  // $('body').on('mouseover', 'span', function(event) {
+    
+  //   $(event.target).toggleClass('hovered');
+    
+  // });
 
 
 });

@@ -68,3 +68,7 @@ body, a:link, a:visited, a:active{
 .lineup{
   top: 50%;
 }
+
+.hovered{
+  border: 10px solid red;
+}
