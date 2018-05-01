@@ -22,9 +22,11 @@ $(document).ready(function() {
     console.log(dancerMakerFunction);
 
     // make a dancer with a random position
+    var height = $('body').height();
+
 
     var dancer = new dancerMakerFunction(
-      Math.floor(Math.random() * $("body").height() / 2) + ($("body").height() / 2),
+      Math.random() * ( 0.75 * height - (height / 2) ) + ( height / 2 ),
       $("body").width() * Math.random(),
       100
     );
@@ -58,7 +60,7 @@ $(document).ready(function() {
       var distanceFromTarget = Math.floor(Math.sqrt((top - clickedTop) ** 2 + (left - clickedLeft) ** 2));
       console.log('distance:', distanceFromTarget);
       
-      if (distanceFromTarget < 500) {
+      if (distanceFromTarget < 300) {
         dancerGroup.push(dancer);
       }
     });
